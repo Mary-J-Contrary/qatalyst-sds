@@ -1,6 +1,6 @@
-
 ---
- QATALYST SDS Demo🛡️
+title: QATALYST SDS Demo
+emoji: 🛡️
 colorFrom: gray
 colorTo: blue
 sdk: gradio
