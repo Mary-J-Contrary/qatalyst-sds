@@ -1,12 +1,13 @@
-import sys
 import os
+import sys
 
-# 1. This tells the system where your code is hiding
-sys.path.append(os.path.join(os.path.dirname(__file__), "src"))
+ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
+SRC_DIR = os.path.join(ROOT_DIR, "src")
 
-# 2. This imports your EXACT 'demo' from your original file
+if SRC_DIR not in sys.path:
+    sys.path.insert(0, SRC_DIR)
+
 from qatalyst.ui.gradio_app import demo
 
 if __name__ == "__main__":
-    # 3. This launches your 'demo' exactly as you designed it
     demo.launch()
