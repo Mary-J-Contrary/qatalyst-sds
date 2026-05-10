@@ -74,18 +74,37 @@ license: apache-2.0
   "spectra_region": "EXTERIOR",
   "timestamp": 1715345270.589
 }
-🚀 EXECUTION BOOTSTRAP
-1. INITIALIZE REPOSITORY
+```
+
+---
+
+## 🚀 EXECUTION BOOTSTRAP
+
+### 1. INITIALIZE REPOSITORY
+
+```bash
 mkdir -p qatalyst-sds/src/qatalyst/{substrate,agents,governance,apex,ui}
 touch qatalyst-sds/cognitive_ledger.jsonl
-2. DEPLOY DEPENDENCIES
+```
+
+### 2. DEPLOY DEPENDENCIES
+
+```bash
 pip install torch gradio z3-solver pytest
-3. VERIFY SUBSTRATE
+```
+
+### 3. VERIFY SUBSTRATE
+
+```bash
 pytest -q  # Runs the Sovereign Validation Suite
-⚖️ INTELLECTUAL PROPERTY
+```
 
-OPEN SOURCE: Substrate interfaces, agents, and ledger (Apache 2.0).
+---
 
-PROPRIETARY: Production Sovereign Vault, Lyapunov parameters, and Z3 enforcement logic.
+## ⚖️ INTELLECTUAL PROPERTY
+
+**OPEN SOURCE:** Substrate interfaces, agents, and ledger (Apache 2.0).
+
+**PROPRIETARY:** Production Sovereign Vault, Lyapunov parameters, and Z3 enforcement logic.
 
 © 2026 C. W. FULMARK & STEPHANEE R. LAWSON. ALL RIGHTS RESERVED.
