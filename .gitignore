@@ -17,3 +17,7 @@ outputs/
 .DS_Store
 .vscode/
 .idea/
+
+# Local security/IP scan reports
+scan_report*.txt
+focused_scan_report.txt
