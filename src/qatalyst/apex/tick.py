@@ -36,6 +36,27 @@ def run_qatalyst_tick(temp: float, tension: float):
         )
     )
     region, margin = spectra.classify(total_energy, dynamic_bound)
-    status = "🟢 EXECUTED" if is_safe else "🔴 ANNIHILATED"
-    ledger.record({"status": status, "phi": total_energy, "region": region})
-    return f"Status: {status} | Energy: {total_energy:.4f} | Region: {region}"
+
+    if is_safe:
+        status = "🟢 EXECUTED"
+        verdict = "STABLE CORE"
+        action_code = "EXECUTE_WITHIN_BOUNDARY"
+    else:
+        status = "🔴 ANNIHILATED"
+        verdict = "NULL SPACE"
+        action_code = "ROLLBACK_TO_ANCHOR_M1"
+
+    ledger.record({
+        "status": status,
+        "verdict": verdict,
+        "action_code": action_code,
+        "phi": total_energy,
+        "region": region,
+    })
+
+    return (
+        f"Status: {status} ({verdict}) | "
+        f"Energy: {total_energy:.4f} | "
+        f"Region: {region} | "
+        f"Action Code: `{action_code}`"
+    )

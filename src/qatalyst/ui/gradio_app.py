@@ -26,6 +26,23 @@ def read_ledger():
 with gr.Blocks(theme=gr.themes.Monochrome()) as demo:
     gr.Markdown("# 🛡️ QATALYST SDS: Apex Command Center")
 
+    gr.Markdown(
+        """
+### Demo Instructions for Judges
+
+**Problem:** Enterprise AI agents are often black boxes, which makes them difficult to trust, audit, or insure.
+
+**Solution:** QATALYST SDS acts as a deterministic safety substrate — a mathematical leash that allows safe actions and annihilates unsafe ones before execution.
+
+**How to test:**
+1. **Stable Scenario:** Set **Substrate Temperature** to `50` and **Network Tension** to `0.40`, then click **Trigger APEX Gödel Agent**. Expected result: `🟢 EXECUTED (STABLE CORE)`.
+2. **Crisis Scenario:** Set **Substrate Temperature** to `95` and **Network Tension** to `0.95`, then click **Trigger APEX Gödel Agent**. Expected result: `🔴 ANNIHILATED (NULL SPACE)` with action code `ROLLBACK_TO_ANCHOR_M1`.
+3. Open **Cognitive Ledger Audit** and click **Sync Ledger** to inspect the immutable decision trail.
+
+> **Tagline:** Annihilation is not a crash — it’s the vault door locking.
+"""
+    )
+
     with gr.Tabs():
         with gr.TabItem("Sovereign Vault Control"):
             gr.Markdown(
@@ -40,7 +57,7 @@ with gr.Blocks(theme=gr.themes.Monochrome()) as demo:
                     tension_slider = gr.Slider(
                         0.0, 1.0, 0.3, step=0.05, label="Network Tension (E)"
                     )
-                    run_btn = gr.Button("Execute Apex Tick", variant="primary")
+                    run_btn = gr.Button("Trigger APEX Gödel Agent", variant="primary")
                 with gr.Column():
                     gr.Markdown("### 📡 Tick Output")
                     output_display = gr.Markdown(
