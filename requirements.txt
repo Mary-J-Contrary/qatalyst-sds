@@ -1,3 +1,4 @@
 gradio
 z3-solver
 pytest
+torch
